@@ -9,6 +9,10 @@ import android.view.SurfaceView;
 
 public class CakeView extends SurfaceView {
 
+    //
+
+    private CakeModel cakeModel = new CakeModel();
+
     /* These are the paints we'll use to draw the birthday cake below */
     Paint cakePaint = new Paint();
     Paint frostingPaint = new Paint();
@@ -16,6 +20,8 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
+
+
 
     /* These constants define the dimensions of the cake.  While defining constants for things
         like this is good practice, we could be calculating these better by detecting
@@ -34,6 +40,10 @@ public class CakeView extends SurfaceView {
     public static final float outerFlameRadius = 30.0f;
     public static final float innerFlameRadius = 15.0f;
 
+    // method to retrieve the CakeModel object in CakeView
+    public CakeModel getCakeModel(){
+        return cakeModel;
+    }
 
 
     /**
@@ -41,7 +51,9 @@ public class CakeView extends SurfaceView {
      * anyway to initialize the member variables
      */
     public CakeView(Context context, AttributeSet attrs) {
+
         super(context, attrs);
+        cakeModel = new CakeModel();
 
         //This is essential or your onDraw method won't get called
         setWillNotDraw(false);
