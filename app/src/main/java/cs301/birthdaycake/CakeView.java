@@ -140,8 +140,13 @@ public class CakeView extends SurfaceView {
         //drawCandle(canvas, cakeLeft + cakeWidth/2 - candleWidth/2, cakeTop);
 
         //Draw two candles equidistant from each other
-        drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/2, cakeTop);
-        drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
+        //drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/2, cakeTop);
+        //drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
+
+        //Draw 0-5 candles
+        for(int i = 0; i < cakeModel.numCandles; i++){
+            drawCandle(canvas, cakeLeft + (i+1)*cakeWidth/(cakeModel.numCandles+1) - candleWidth/2, cakeTop);
+        }
     }//onDraw
 
 }//class CakeView
