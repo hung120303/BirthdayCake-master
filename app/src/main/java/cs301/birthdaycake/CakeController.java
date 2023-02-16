@@ -2,8 +2,10 @@ package cs301.birthdaycake;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 
-public class CakeController implements View.OnClickListener {
+
+public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private CakeView cakeView;
 
     private CakeModel cakeModel;
@@ -21,8 +23,11 @@ public class CakeController implements View.OnClickListener {
         Log.d("click", "idk");
         cakeModel.isLit = false;
         cakeView.invalidate();
+    }
 
-
-
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+        cakeModel.hasCandles = b;
+        cakeView.invalidate();
     }
 }

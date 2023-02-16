@@ -75,15 +75,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:text="Candles"
-            android:layout_marginRight="50dp"
-            android:checked="true"/>
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_weight="0"
+                android:checked="true"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:text="Candles" />
         <Switch
             android:id="@+id/switch1"
             android:layout_width="wrap_content"

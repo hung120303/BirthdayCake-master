@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
+import android.widget.CompoundButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.button).setOnClickListener(cakeController);
 
-
+        CompoundButton b = findViewById(R.id.switch2);
+        b.setOnCheckedChangeListener(cakeController);
     }
+
     public void goodbye(View button){
         Log.i("button", "Goodbye");
     }
