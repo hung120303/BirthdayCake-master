@@ -11,6 +11,7 @@ public class CakeView extends SurfaceView {
 
     //
 
+
     private CakeModel cakeModel = new CakeModel();
 
     /* These are the paints we'll use to draw the birthday cake below */
@@ -86,11 +87,16 @@ public class CakeView extends SurfaceView {
         //draw the outer flame
         float flameCenterX = left + candleWidth/2;
         float flameCenterY = bottom - wickHeight - candleHeight - outerFlameRadius/3;
-        canvas.drawCircle(flameCenterX, flameCenterY, outerFlameRadius, outerFlamePaint);
+
+        if(cakeModel.isLit){
+            canvas.drawCircle(flameCenterX, flameCenterY, outerFlameRadius, outerFlamePaint);
+        }
 
         //draw the inner flame
         flameCenterY += outerFlameRadius/3;
-        canvas.drawCircle(flameCenterX, flameCenterY, innerFlameRadius, innerFlamePaint);
+        if(cakeModel.isLit){
+            canvas.drawCircle(flameCenterX, flameCenterY, innerFlameRadius, innerFlamePaint);
+        }
 
         //draw the wick
         float wickLeft = left + candleWidth/2 - wickWidth/2;

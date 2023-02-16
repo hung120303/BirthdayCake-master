@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
         CakeView cakeView = findViewById(R.id.cakeview);
 
         CakeController cakeController = new CakeController(cakeView);
-        System.out.println();
+
+        findViewById(R.id.button).setOnClickListener(cakeController);
+
+
     }
     public void goodbye(View button){
         Log.i("button", "Goodbye");
