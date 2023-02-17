@@ -170,8 +170,8 @@ public class CakeView extends SurfaceView {
 
 
         //
-        if(cakeModel.balloon_X!=0 && cakeModel.balloon_Y!=0) {
-            drawBalloon(canvas, cakeModel.balloon_X, cakeModel.balloon_Y);
+        if(cakeModel.x !=0 && cakeModel.y !=0) {
+            drawBalloon(canvas, cakeModel.x, cakeModel.y);
         }
 
 
