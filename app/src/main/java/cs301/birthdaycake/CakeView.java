@@ -141,13 +141,13 @@ public class CakeView extends SurfaceView {
 
 
 
-
         //Draw two candles equidistant from each other
         drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/2, cakeTop);
         drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
 
         textPaint.setTextSize(100);
         canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
+        //big pp gang
 
 
 
