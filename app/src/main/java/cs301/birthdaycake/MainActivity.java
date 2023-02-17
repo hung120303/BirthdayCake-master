@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         CompoundButton b = findViewById(R.id.switch2);
         b.setOnCheckedChangeListener(cakeController);
+        cakeView.setOnTouchListener(cakeController);
+
+
     }
 
     public void goodbye(View button){
