@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 
@@ -23,6 +24,9 @@ public class CakeView extends SurfaceView {
     Paint wickPaint = new Paint();
     Paint textPaint = new Paint();
 
+    Paint balloonPaint = new Paint();
+    Paint balloonStringPaint = new Paint();
+
 
 
     /* These constants define the dimensions of the cake.  While defining constants for things
@@ -41,6 +45,10 @@ public class CakeView extends SurfaceView {
     public static final float wickWidth = 6.0f;
     public static final float outerFlameRadius = 30.0f;
     public static final float innerFlameRadius = 15.0f;
+
+    public static final float balloonWidth = 70.0f;
+
+    public static final float balloonHeight = 80.0f;
 
     // method to retrieve the CakeModel object in CakeView
     public CakeModel getCakeModel(){
@@ -75,8 +83,17 @@ public class CakeView extends SurfaceView {
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
         textPaint.setColor(Color.RED);
+        balloonPaint.setColor(Color.BLUE);
+        balloonStringPaint.setColor(Color.BLACK);
 
         setBackgroundColor(Color.WHITE);  //better than black default
+
+    }
+
+    public void drawBalloon(Canvas canvas, float x, float y){
+        RectF r = new RectF(x-balloonWidth/2 ,y-balloonHeight/2, x+balloonWidth, y+balloonHeight);
+        canvas.drawRect(x, y+balloonHeight/2, x+10.0f, y+300.0f, balloonStringPaint);
+        canvas.drawOval(r, balloonPaint);
 
     }
 
@@ -147,12 +164,15 @@ public class CakeView extends SurfaceView {
         drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
 
         textPaint.setTextSize(100);
-        canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
+        //canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
 
 
 
 
-
+        //
+        if(cakeModel.balloon_X!=0 && cakeModel.balloon_Y!=0) {
+            drawBalloon(canvas, cakeModel.balloon_X, cakeModel.balloon_Y);
+        }
 
 
 
