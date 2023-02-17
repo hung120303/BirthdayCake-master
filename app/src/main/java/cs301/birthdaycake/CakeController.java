@@ -39,4 +39,5 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         cakeView.invalidate();
         return false;
     }
+
 }

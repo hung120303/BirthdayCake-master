@@ -21,7 +21,8 @@ public class CakeView extends SurfaceView {
     Paint outerFlamePaint = new Paint();
     Paint innerFlamePaint = new Paint();
     Paint wickPaint = new Paint();
-    Paint textPaint = new Paint();
+
+    Paint checkerPaint = new Paint();
 
 
 
@@ -74,8 +75,6 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
-        textPaint.setColor(Color.RED);
-
         setBackgroundColor(Color.WHITE);  //better than black default
 
     }
@@ -146,17 +145,22 @@ public class CakeView extends SurfaceView {
         drawCandle(canvas, cakeLeft + cakeWidth/3 - candleWidth/2, cakeTop);
         drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
 
-        textPaint.setTextSize(100);
-        canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
-
-
-
-
-
-
-
-
+        //canvas.drawRect(cakeModel.checker_x, cakeModel.checker_y, cakeModel.checker_x + 10, cakeModel.checker_y + 10, checkerPaint);
+        if (cakeModel.x != 0 && cakeModel.y != 0){
+            drawChecker(canvas, cakeModel.x, cakeModel.y);
+        }
     }//onDraw
+
+    public void drawChecker(Canvas canvas, float x, float y) {
+        checkerPaint.setColor(0xFF4985FF);
+        checkerPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(x, y, x + 100, y + 100, checkerPaint);
+        canvas.drawRect(x - 100, y - 100, x, y, checkerPaint);
+        checkerPaint.setColor(0xFF644185);
+        checkerPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(x + 100, y - 100, x, y, checkerPaint);
+        canvas.drawRect(x - 100, y, x, y + 100, checkerPaint);
+        }
 
 }//class CakeView
 

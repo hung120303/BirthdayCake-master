@@ -3,6 +3,8 @@ package cs301.birthdaycake;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.Touch;
+import android.view.MotionEvent;
 import android.view.View;
 import android.util.Log;
 import android.widget.CompoundButton;
@@ -26,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         CompoundButton b = findViewById(R.id.switch2);
         b.setOnCheckedChangeListener(cakeController);
-        cakeView.setOnTouchListener(cakeController);
 
-
+        View v = findViewById(R.id.cakeview);
+        v.setOnTouchListener(cakeController);
     }
 
     public void goodbye(View button){
