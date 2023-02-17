@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.util.Log;
 import android.widget.CompoundButton;
-import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         CompoundButton b = findViewById(R.id.switch2);
         b.setOnCheckedChangeListener(cakeController);
-
-        SeekBar s = findViewById(R.id.seekbar1);
-        s.setOnSeekBarChangeListener(cakeController);
     }
 
     public void goodbye(View button){
