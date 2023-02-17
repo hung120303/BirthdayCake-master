@@ -164,7 +164,7 @@ public class CakeView extends SurfaceView {
         drawCandle(canvas, cakeLeft + 2*cakeWidth/3 - candleWidth/2, cakeTop);
 
         textPaint.setTextSize(100);
-        //canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
+        canvas.drawText("Coordinates" + cakeModel.x + " ," + cakeModel.y + " ", 100,1100,textPaint );
 
 
 
